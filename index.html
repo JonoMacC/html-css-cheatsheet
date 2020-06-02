@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML & CSS Reference Sheet</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="container">
+    <header>
+      <h1>HTML & CSS <br />Reference Sheet</h1>
+    </header>
+    <nav>
+      <ul class="btn-link">
+        <li><a href="#starting">Getting Started</a></li>
+        <li>
+          <a href="#semantic">HTML5 Semantic Elements</a>
+        </li>
+        <li><a href="#css-selectors">CSS Selectors</a></li>
+        <li><a href="#box-model">CSS Box Model</a></li>
+        <li><a href="#flexbox">Flexbox</a></li>
+        <li><a href="#grid">CSS Grid</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="starting">
+        <article>
+          <h2>Getting Started</h2>
+          <p>
+            It's important to set up a comfortable development environment.
+            While online code editors like
+            <a href="https://codepen.io/">Codepen</a> and
+            <a href="https://codesandbox.io/index2">Code Sandbox</a> give you
+            the essentials, the reliance on Internet connectivity can lead to
+            poor performance which hinders experimentation. Moving to a setup
+            where you can have code in full screen and a browser in a separate
+            screen, with the ability to look into the code using Chrome Dev
+            Tools will make a big difference in your productivity.
+          </p>
+          <aside>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Code Editor</td>
+                  <td>VS Code</td>
+                </tr>
+                <tr>
+                  <td>Coding Font</td>
+                  <td>Fira Code</td>
+                </tr>
+                <tr>
+                  <td>Editor Theme</td>
+                  <td>City Lights</td>
+                </tr>
+              </tbody>
+            </table>
+          </aside>
+        </article>
+      </section>
+
+      <section id="semantic">
+        <article>
+          <h2>HTML5 Semantic Elements</h2>
+          <p>
+            Semantic elements add meaning and clarity to the structure of HTML.
+            There are various semantic elements supported in HTML5 that can be
+            used in place of generic <strong>&lt;div&gt;</strong> tags. Use of
+            semantic tags also improves the accessibility of a site.
+          </p>
+          <h3>Some semantic elements</h3>
+          <table>
+            <thead>
+              <tr>
+                <td><h3>Element</h3></td>
+                <td><h3>Usage</h3></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&lt;nav&gt;</td>
+                <td>
+                  Site navigation including menus, table of contents, and
+                  indexes.
+                </td>
+              </tr>
+              <tr>
+                <td>&lt;header&gt;</td>
+                <td>Site header</td>
+              </tr>
+              <tr>
+                <td>&lt;main&gt;</td>
+                <td>
+                  The main content of the document. Typically between the header
+                  and the footer.
+                </td>
+              </tr>
+              <tr>
+                <td>&lt;section&gt;</td>
+                <td>Used for distinct sections of a document.</td>
+              </tr>
+              <tr>
+                <td>&lt;article&gt;</td>
+                <td>
+                  Used to group a block of text in a document. Articles can be
+                  nested in sections and sections can be nested in articles.
+                </td>
+              </tr>
+              <tr>
+                <td>&lt;aside&gt;</td>
+                <td>
+                  Useful for text related to an article but not an essential
+                  part of the article.
+                </td>
+              </tr>
+              <tr>
+                <td>&lt;figure&gt;</td>
+                <td>
+                  Can be used to contain an image, especially when the image
+                  will be accompanied by text.
+                </td>
+              </tr>
+              <tr>
+                <td>&lt;figcaption&gt;</td>
+                <td>
+                  For text that accompanies an image inside a figure element.
+                </td>
+              </tr>
+              <tr>
+                <td>&lt;footer&gt;</td>
+                <td>For footer elements.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+        <aside>
+          <p>
+            Before creating a new container class or id, consider whether the
+            content is well-captured by an existing semantic tag. For example,
+            an image container for an image and title within a card element
+            could be well represented using the
+            <strong>&lt;figure&gt;</strong> tag.
+          </p>
+        </aside>
+      </section>
+
+      <section id="css-selectors">
+        <article>
+          <h2>CSS Selectors</h2>
+          <p>
+            CSS needs to be able to select elements in order to style them
+            correctly. Improper selection can easily lead to unintended visuals.
+            Keeping some key tips in mind should clear up most issues.
+          </p>
+          <ul>
+            <li class="card">
+              <h3>Element Selection</h3>
+              <p>
+                Native HTML elements are selected using the element name without
+                any tags, with styling contained inside curly braces.
+              </p>
+              <code>
+                h2 { <br />
+                &#160;&#160;font-size: 2rem; <br />
+                }
+              </code>
+            </li>
+            <li class="card">
+              <h3>Class Selection</h3>
+              <p>
+                Classes are selected with a period pre-pending the class name.
+              </p>
+              <code>
+                .bold { <br />
+                &#160;&#160;font-weight: 700; <br />
+                }
+              </code>
+            </li>
+            <li class="card">
+              <h3>ID Selection</h3>
+              <p>
+                Elements named with ids are selected using a hashtag and the
+                element name.
+              </p>
+              <code>
+                #course-offerings { <br />
+                &#160;&#160;background-color: blue; <br />
+                }
+              </code>
+            </li>
+            <li class="card">
+              <h3>Descendant Selection</h3>
+              <p>
+                Descendants of an element are selected with a space between the
+                name of the ancestor and that of the descendant. All descendants
+                are selected, regardless of how many levels deep they are within
+                the element.
+              </p>
+              <code>
+                ul li { <br />
+                &#160;&#160;margin: 0 auto; <br />
+                }
+              </code>
+            </li>
+            <li class="card">
+              <h3>Child Selection</h3>
+              <p>
+                Direct children of an element are selected using the
+                <strong>&gt;</strong>
+                combinator. Only elements directly beneath the ancestor will be
+                selected.
+              </p>
+              <code>
+                ul > li { <br />
+                &#160;&#160;margin: 0 auto; <br />
+                }
+              </code>
+            </li>
+            <li class="card">
+              <h3>Combined Selection</h3>
+              <p>
+                An element can be targeted based on its membership in multiple
+                classes. This is done similar to a descendant selection but the
+                whitespace is omitted. The below code targets unordered lists of
+                the class "blue" but not any descendant elements that may have
+                that class.
+              </p>
+              <code>
+                ul.blue { <br />
+                &#160;&#160;background-color: blue;<br />
+                }
+              </code>
+            </li>
+            <li class="card">
+              <h3>Nth Child Selection</h3>
+              <p>
+                The <strong>:nth-child()</strong> pseudo-class can be used to
+                select elements based on their position within a group of
+                siblings. This can be handy for selecting first, last, or middle
+                elements or for selecting every nth element (for example only
+                even elements). A simple example is changing the background
+                color of even rows within a table.
+              </p>
+              <code>
+                tr:nth-child(2n) {<br />
+                &#160;&#160;background-color: #eee;<br />
+                }
+              </code>
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="box-model">
+        <article>
+          <h2>CSS Box Model</h2>
+          <p>
+            By default CSS uses an inexplicable box model whereby the size of
+            the content box is specified and the padding and border are added to
+            that. This can be remedied by specifying the border-box box model in
+            the CSS.
+          </p>
+          <code>
+            html { <br />
+            &#160;&#160;box-sizing: border-box; <br />
+            }
+          </code>
+        </article>
+      </section>
+
+      <section id="flexbox">
+        <article>
+          <h2>Flexbox</h2>
+          <p>
+            With the flexbox module, one-dimensional elements can be created in
+            CSS that flow either horizontally or vertically and resize based on
+            screen size without using media queries. With flexbox, the spacing
+            of items within a flexible box can be controlled. Note that there is
+            no explicit control for the gap between items but setting the margin
+            property on individual items can be used to achieve this effect.
+          </p>
+          <ul class="btn-link">
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox"
+              >
+                Basic Concepts of Flexbox</a
+              >
+            </li>
+            <li>
+              <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">
+                A Complete Guide to Flexbox</a
+              >
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="grid">
+        <article>
+          <h2>CSS Grid</h2>
+          <p>
+            Grid is a powerful module for two-dimensional layouts. Grid allows
+            for the specification of rows and columns, overlapping elements for
+            magazine-style layouts, and defined row and column gaps. It is easy
+            to make the grid fluid according to the screen-size without media
+            queries.
+          </p>
+          <ul class="btn-link">
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout"
+              >
+                CSS Grid Layout</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://css-tricks.com/4-css-grid-properties-and-one-value-for-most-of-your-layout-needs/"
+              >
+                Quick Start to CSS Grid</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+              >
+                A Complete Guide to CSS Grid</a
+              >
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="resources">
+        <article>
+          <h2>Resources</h2>
+          <ul>
+            <li class="card">
+              <a href="https://developer.mozilla.org/en-US/">
+                <h3>MDN Web Docs</h3>
+                <p>
+                  Essentially the bible for all things HTML, CSS, and
+                  JavaScript.
+                </p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="https://css-tricks.com/">
+                <h3>CSS Tricks</h3>
+                <p>
+                  Great resource for getting a better understanding of CSS and
+                  figuring out issues big and small.
+                </p>
+              </a>
+            </li>
+            <li class="card">
+              <a href="https://caniuse.com/">
+                <h3>Can I Use</h3>
+                <p>
+                  Not all browsers support all features covered in published
+                  specifications. This site lets you check the compatibility of
+                  what you intend to use.
+                </p>
+              </a>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Hand-coded with ♥ by
+        <a href="https://twitter.com/jonmaccaull">Jon MacCaull</a>. See this
+        project on Github.
+      </p>
+    </footer>
+  </body>
+</html>

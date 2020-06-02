@@ -1,0 +1,261 @@
+/* Font & Basic Styles */
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* margin: 0; */
+  padding: 0;
+  background-color: none;
+}
+
+html {
+  font-size: 16px;
+  line-height: 150%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* li {
+  list-style: none;
+}
+
+/* Universal Styles */
+h1 {
+  font-size: 3rem;
+  line-height: 120%;
+  width: 1200px;
+  margin: 0 auto;
+  position: sticky;
+  top: 2rem;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background-image: url("./resources/images/hero_bg.svg");
+  height: 300px;
+  background-size: 991px auto;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: rgb(23, 29, 35);
+  color: white;
+  padding: 1rem 1rem;
+  grid-column: 1 / span 4;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+a {
+  color: dodgerblue;
+  text-decoration: none;
+  width: 100%;
+  transition: all ease-in-out 0.3s;
+}
+
+a:hover,
+a:focus {
+  color: dodgerblue;
+}
+
+a:visited {
+  color: dodgerblue;
+}
+
+/* Common Styles */
+.btn-link a {
+  display: block;
+  border: 1px solid turquoise;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  color: black;
+}
+
+.btn-link a:active,
+.btn-link a:focus,
+.btn-link a:hover {
+  background-color: turquoise;
+  color: black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+section {
+  padding: 2rem 1rem;
+  max-width: 800px;
+}
+
+/* Code Block Styling */
+code {
+  display: block;
+  background-color: rgb(23, 29, 35);
+  color: turquoise;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-family: "Fira Code", monospace;
+  font-size: 0.875rem;
+  width: 100%;
+}
+
+/* Table Styling */
+table {
+  border: 1px solid #eee;
+  border-spacing: 0;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+td {
+  padding: 0.5rem;
+}
+
+tr:nth-child(2n) {
+  background-color: rgba(23, 29, 35, 0.1);
+}
+
+thead {
+  background-color: rgb(23, 29, 35, 0.2);
+  text-align: center;
+}
+
+/* Card Styling */
+.card {
+  border: 1px solid #eee;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  transition: all ease-in-out 0.3s;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.card:hover,
+.card:focus {
+  box-shadow: -0.5rem 0.5rem 0 turquoise;
+  top: -0.5rem;
+  left: 0.5rem;
+}
+
+.card a,
+.card a:hover,
+.card a:focus,
+.card a:visited {
+  color: black;
+}
+
+/* Section Styles */
+main {
+  grid-column: 1 / span 4;
+  margin: 0 auto;
+}
+
+/* Navigation Menu */
+nav {
+  display: none;
+}
+
+nav ul {
+  position: sticky;
+  top: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+nav ul > li {
+  margin: 0 1rem 0.5rem 1rem;
+  width: 12.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: rgb(23, 29, 35);
+  font-size: 0.75rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 1rem 1rem;
+  grid-column: 1 / span 6;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a,
+footer a:visited {
+  color: white;
+  display: inline;
+}
+
+/* CSS Selectors Section */
+#css-selectors ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 1rem;
+}
+
+#css-selectors ul > li {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#css-selectors ul > li > code {
+  margin-top: auto;
+}
+
+#css-selectors ul > li > p {
+  margin-bottom: 2rem;
+}
+
+/* Resources Section */
+#resources ul > li {
+  margin-bottom: 1rem;
+}
+
+/* Flexbox and CSS Grid Sections */
+#flexbox ul,
+#grid ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+}
+
+#flexbox ul > li,
+#grid ul > li {
+  margin: 0 1rem 0.5rem 0;
+}
+
+/* Media Query for Desktops */
+@media all and (min-width: 1023px) {
+  nav {
+    display: block;
+    grid-column: 1 / span 1;
+    margin: 2rem auto 0 auto;
+  }
+
+  main {
+    grid-column: 2 / span 2;
+  }
+
+  header {
+    height: 620px;
+  }
+
+  h1 {
+    font-size: 4rem;
+    line-height: 120%;
+  }
+}
