@@ -114,6 +114,7 @@ table {
   border-spacing: 0;
   border-radius: 0.25rem;
   padding: 0.5rem;
+  width: 100%;
 }
 
 td {
@@ -121,12 +122,16 @@ td {
 }
 
 tr:nth-child(2n) {
-  background-color: rgba(23, 29, 35, 0.1);
+  background-color: rgba(23, 29, 35, 0.05);
+}
+
+tr:hover,
+tr:nth-child(2n):hover {
+  background-color: rgba(23, 29, 35, 0.15);
 }
 
 thead {
-  background-color: rgb(23, 29, 35, 0.2);
-  text-align: center;
+  background-color: rgb(23, 29, 35, 0.15);
 }
 
 /* Card Styling */
@@ -169,7 +174,7 @@ nav ul {
   position: sticky;
   top: 2rem;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: stretch;
 }
@@ -243,7 +248,7 @@ footer a:visited {
   nav {
     display: block;
     grid-column: 1 / span 1;
-    margin: 2rem auto 0 auto;
+    margin: 2rem 0 0 auto;
   }
 
   main {
